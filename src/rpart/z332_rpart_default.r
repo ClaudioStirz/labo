@@ -10,7 +10,7 @@ require("rlist")
 require("rpart")
 require("parallel")
 
-ksemilla_azar  <- 102191   #cambiar por la primer semilla
+ksemilla_azar  <- 999233   #cambiar por la primer semilla
 
 #------------------------------------------------------------------------------
 #graba a un archivo los componentes de lista
@@ -124,7 +124,8 @@ EstimarGanancia  <- function( x )
 #------------------------------------------------------------------------------
 #Aqui empieza el programa
 
-setwd( "D:\\gdrive\\UTN2022P\\" )
+#setwd( "D:\\gdrive\\UTN2022P\\" )
+setwd("C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\")
 
 #cargo el dataset
 dataset  <- fread("./datasets/paquete_premium_202011.csv")   #donde entreno
@@ -133,7 +134,7 @@ dataset  <- fread("./datasets/paquete_premium_202011.csv")   #donde entreno
 #creo la carpeta donde va el experimento
 # HT  representa  Hiperparameter Tuning
 dir.create( "./labo/exp/",  showWarnings = FALSE ) 
-dir.create( "./labo/exp/HT3220/", showWarnings = FALSE )
+dir.create( "./labo/exp/HT3320/", showWarnings = FALSE )
 setwd("./labo/exp/HT3320/")   #Establezco el Working Directory DEL EXPERIMENTO
 
 

@@ -13,7 +13,7 @@ require("rlist")
 require("lightgbm")
 
 
-ksemilla_azar  <- 102191  #Aqui poner la propia semilla
+ksemilla_azar  <- 999233 #102191  #Aqui poner la propia semilla
 
 #------------------------------------------------------------------------------
 #graba a un archivo los componentes de lista
@@ -74,7 +74,7 @@ EstimarGanancia_lightgbm  <- function( x )
                           boost_from_average= TRUE,
                           feature_pre_filter= FALSE,
                           verbosity= -100,
-                          seed= 999983,
+                          seed= 999233, #seed= 999983,
                           max_depth=  -1,         # -1 significa no limitar,  por ahora lo dejo fijo
                           min_gain_to_split= 0.0, #por ahora, lo dejo fijo
                           lambda_l1= 0.0,         #por ahora, lo dejo fijo
@@ -88,14 +88,14 @@ EstimarGanancia_lightgbm  <- function( x )
 
   param_completo  <- c( param_basicos, param_variable, x )
 
-  set.seed( 999983 )
+  set.seed( 999233 ) #set.seed( 999983 )
   modelocv  <- lgb.cv( data= dtrain,
                        eval= fganancia_logistic_lightgbm,
                        stratified= TRUE, #sobre el cross validation
                        nfold= kfolds,    #folds del cross validation
                        param= param_completo,
                        verbose= -100,
-                       seed= 999983
+                       seed= 999233 #seed= 999983
                       )
 
   #obtengo la ganancia
@@ -121,7 +121,8 @@ EstimarGanancia_lightgbm  <- function( x )
 #Aqui empieza el programa
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:\\gdrive\\ITBA2022A\\")   #Establezco el Working Directory
+#setwd("D:\\gdrive\\ITBA2022A\\")   #Establezco el Working Directory
+setwd( "C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\" )
 
 #cargo el dataset donde voy a entrenar el modelo
 dataset  <- fread("./datasets/paquete_premium_202011.csv")
@@ -130,7 +131,8 @@ dataset  <- fread("./datasets/paquete_premium_202011.csv")
 # HT  representa  Hiperparameter Tuning
 dir.create( "./labo/exp/",  showWarnings = FALSE ) 
 dir.create( "./labo/exp/HT5310/", showWarnings = FALSE )
-setwd("D:\\gdrive\\ITBA2022A\\labo\\exp\\HT5310\\")   #Establezco el Working Directory DEL EXPERIMENTO
+#setwd("D:\\gdrive\\ITBA2022A\\labo\\exp\\HT5310\\")   #Establezco el Working Directory DEL EXPERIMENTO
+setwd("C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\labo\\exp\\HT5310\\")   #Establezco el Working Directory DEL EXPERIMENTO
 
 
 #en estos archivos quedan los resultados

@@ -11,7 +11,7 @@ require("rlist")
 require("xgboost")
 
 
-ksemilla_azar  <- 102191  #Aqui poner la propia semilla
+ksemilla_azar  <- 999233 #102191  #Aqui poner la propia semilla
 
 #------------------------------------------------------------------------------
 #graba a un archivo los componentes de lista
@@ -81,7 +81,8 @@ EstimarGanancia_xgboost  <- function( x )
 
   param_completo  <- c( param_basicos, x )
 
-  set.seed( 999983 )
+  #set.seed( 999983 )
+  set.seed( 999233 )
   modelocv  <- xgb.cv( objective= "binary:logistic",
                        data= dtrain,
                        feval= fganancia_logistic_xgboost,
@@ -119,7 +120,8 @@ EstimarGanancia_xgboost  <- function( x )
 #Aqui empieza el programa
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+#setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+setwd( "C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\" )
 
 #cargo el dataset donde voy a entrenar el modelo
 dataset  <- fread("./datasets/paquete_premium_202011.csv")

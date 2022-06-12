@@ -15,7 +15,7 @@ require("parallel")
 
 
 
-ksemilla_azar  <- 102191  #Aqui poner la propia semilla
+ksemilla_azar  <- 999233 #102191  #Aqui poner la propia semilla
 
 #------------------------------------------------------------------------------
 #graba a un archivo los componentes de lista
@@ -130,7 +130,8 @@ EstimarGanancia_ranger  <- function( x )
 #Aqui comienza el programa
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+#setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+setwd("C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\")   #Establezco el Working Directory
 
 #cargo el dataset donde voy a entrenar el modelo
 dataset  <- fread("./datasets/paquete_premium_202011.csv", stringsAsFactors= TRUE)   #donde entreno
@@ -140,7 +141,8 @@ dataset  <- fread("./datasets/paquete_premium_202011.csv", stringsAsFactors= TRU
 # HT  representa  Hiperparameter Tuning
 dir.create( "./labo/exp/",  showWarnings = FALSE ) 
 dir.create( "./labo/exp/HT4310/", showWarnings = FALSE )
-setwd("D:\\gdrive\\UTN2022P\\labo\\exp\\HT4310\\")   #Establezco el Working Directory DEL EXPERIMENTO
+#setwd("D:\\gdrive\\UTN2022P\\labo\\exp\\HT4310\\")   #Establezco el Working Directory DEL EXPERIMENTO
+setwd("C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\labo\\exp\\HT4310\\")   #Establezco el Working Directory DEL EXPERIMENTO
 
 #en este archivo quedan el resultados
 klog        <- "HT431.txt"

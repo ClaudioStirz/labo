@@ -8,7 +8,8 @@ require("data.table")
 require("xgboost")
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+#setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+setwd( "C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\" )
 
 #cargo el dataset donde voy a entrenar
 dataset  <- fread("./datasets/paquete_premium_202011.csv", stringsAsFactors= TRUE)
@@ -33,7 +34,7 @@ modelo  <- xgb.train( data= dtrain,
                                    eta=                 0.3,
                                    colsample_bytree=    1.0
                                    ),
-                      nrounds= 34
+                      nrounds= 66 #2 #34
                     )
 
 #aplico el modelo a los datos sin clase

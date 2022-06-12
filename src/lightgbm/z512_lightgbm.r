@@ -8,7 +8,8 @@ require("data.table")
 require("lightgbm")
 
 #Aqui se debe poner la carpeta de la computadora local
-setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+#setwd("D:\\gdrive\\UTN2022P\\")   #Establezco el Working Directory
+setwd( "C:\\Users\\Administrador\\Desktop\\UTNFRP\\AplicacionesaEconomiayFinanzas\\Laboratorio\\" )
 
 #cargo el dataset donde voy a entrenar
 dataset  <- fread("./datasets/paquete_premium_202011.csv", stringsAsFactors= TRUE)
@@ -32,12 +33,13 @@ dtrain  <- lgb.Dataset( data= data.matrix(  dataset[ , campos_buenos, with=FALSE
 modelo  <- lgb.train( data= dtrain,
                       param= list( objective=        "binary",
                                    max_bin=             31,
-                                   learning_rate=        0.1,
-                                   num_iterations=      50,
-                                   num_leaves=          64,
-                                   feature_fraction=     0.5,
-                                   min_data_in_leaf=  3000,
-                                   seed=            999983 )  )
+                                   learning_rate=        0.0472946328421065,
+                                   num_iterations=      147, #50,
+                                   num_leaves=          125, #64,
+                                   feature_fraction=     0.494122747349817, #0.5,
+                                   min_data_in_leaf=  20, #3000,
+                                   #seed=            999983 )  )
+                                   seed=            999233 )  )
 
 
 #aplico el modelo a los datos sin clase
