@@ -35,7 +35,7 @@ hs <- makeParamSet(
         )
 
 
-kprefijo       <- "HT731"
+kprefijo       <- "HT731_v4"
 ksemilla_azar  <- 999233 #102191  #Aqui poner la propia semilla
 kdataset       <- "./datasets/paquete_premium_ext_721.csv.gz"
 
