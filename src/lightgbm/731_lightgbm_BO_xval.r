@@ -37,7 +37,7 @@ hs <- makeParamSet(
 
 kprefijo       <- "HT731_v4"
 ksemilla_azar  <- 999233 #102191  #Aqui poner la propia semilla
-kdataset       <- "./datasets/paquete_premium_ext_721.csv.gz"
+kdataset       <- "./datasets/paquete_premium_ext_722.csv.gz"
 
 #donde entrenar
 ktrain_mes_desde    <- 201912        #mes desde donde entreno
